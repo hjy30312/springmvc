@@ -16,6 +16,6 @@
         请输入生日：<input type="text" name="birth">
         <input type="submit" value="开始计算">
     </form>
-    ${msg}
+    ${msg }
 </body>
 </html>
