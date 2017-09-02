@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 
 @Controller
@@ -58,12 +59,15 @@ public class LoginController {
     public String checkLogin3(
             String username,
             String password,
-            ModelMap model) {
+            ModelMap model,
+            HttpSession session) {
         System.out.println("username:" + username);
         System.out.println("password:" + password);
         if ("root".equals(username)
                 && "1234".equals(password)) {
             model.put("username", username);
+            session.setAttribute(
+                    "username", username);
             return "ok";    //"ok.jsp"使用${user}
         } else {
             model.put("msg", "用户名或密码错误");
