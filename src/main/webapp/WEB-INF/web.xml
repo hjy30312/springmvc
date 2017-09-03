@@ -21,13 +21,15 @@
     <servlet-name>springmvc</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-
+  <!--org.springframework.web.filter.CharacterEncodingFilter-->
  <filter>
    <filter-name>myfilter</filter-name>
    <!--com.hjy.filter.MyFilter-->
    <filter-class>
-     org.springframework.web.filter.CharacterEncodingFilter
+
+
    </filter-class>
+
    <init-param>
      <param-name>encoding</param-name>
      <param-value>UTF-8</param-value>
@@ -37,4 +39,8 @@
     <filter-name>myfilter</filter-name>
     <url-pattern>*.do</url-pattern>
   </filter-mapping>
+
+
+
+
 </web-app>
